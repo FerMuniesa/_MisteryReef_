@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace GR
 {
     public class PlayerManager : MonoBehaviour
@@ -77,6 +76,7 @@ namespace GR
             inputHandler.d_Pad_Right = false;
             inputHandler.a_Input = false;
             inputHandler.jump_Input = false;
+            inputHandler.inventory_Input = false;
 
             if (isInAir)
             {
