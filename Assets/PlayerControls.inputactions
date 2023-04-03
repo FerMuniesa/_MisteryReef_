@@ -11,8 +11,7 @@
                     "id": "9f21d492-e93e-4155-b3de-9abca886ba60",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Camera",
@@ -20,8 +19,7 @@
                     "id": "4cfff6f8-1f51-4719-9526-9e25fbfc3a8f",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -114,8 +112,7 @@
                     "id": "b88f3909-7850-43e2-ad06-d3db80b1791e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "RB",
@@ -123,8 +120,7 @@
                     "id": "a96b9004-123a-4f1b-a0fe-f027be3797df",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "RT",
@@ -132,8 +128,7 @@
                     "id": "1d381608-c7e3-423d-bf42-3b87d2d6eb7b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "A.",
@@ -141,17 +136,7 @@
                     "id": "946de916-1d42-4d21-ac89-86ec45df19cc",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "da342409-6169-4bfb-b8ab-00e65f2c90b0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Jump",
@@ -159,8 +144,7 @@
                     "id": "cc25e17c-a10a-4a73-aa70-33a47bd347d9",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -229,17 +213,6 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4d5fe92f-cbfd-4643-8f44-fc2447e387d7",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -253,8 +226,7 @@
                     "id": "53349e72-0b4e-4508-bdde-481ecd5803f5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "D-Pad Down ",
@@ -262,8 +234,7 @@
                     "id": "95e33b29-496b-4731-a589-3113a00d2488",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "D-Pad Left",
@@ -271,8 +242,7 @@
                     "id": "ab949b67-5252-4fb0-9ff5-f9de24f30f46",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "D-Pad Right",
@@ -280,8 +250,7 @@
                     "id": "bbc6bf57-091c-4c37-a2a9-8b6c36298c2b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 }
             ],
             "bindings": [
