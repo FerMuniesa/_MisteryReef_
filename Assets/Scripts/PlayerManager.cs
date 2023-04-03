@@ -43,7 +43,7 @@ namespace GR
             float delta = Time.deltaTime;
             isInteracting = anim.GetBool("isInteracting");
             canDoCombo = anim.GetBool("canDoCombo");
-            anim.SetBool("isInAir", isInAir);
+            anim.SetBool("IsinAir", isInAir);
 
             inputHandler.TickInput(delta);
             playerLocomotion.HandleMovement(delta);
