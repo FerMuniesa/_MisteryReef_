@@ -43,7 +43,7 @@ namespace GR
             float delta = Time.deltaTime;
             isInteracting = anim.GetBool("isInteracting");
             canDoCombo = anim.GetBool("canDoCombo");
-            anim.SetBool("IsinAir", isInAir);
+            anim.SetBool("isInAir", isInAir);
 
             inputHandler.TickInput(delta);
             playerLocomotion.HandleMovement(delta);
@@ -77,6 +77,7 @@ namespace GR
             inputHandler.d_Pad_Right = false;
             inputHandler.a_Input = false;
             inputHandler.jump_Input = false;
+            inputHandler.inventory_Input = false;
 
             if (isInAir)
             {
@@ -96,7 +97,7 @@ namespace GR
 
                     if (interactableObject != null)
                     {
-                        string interactableText = interactableObject.interactbleText;
+                        string interactableText = interactableObject.interactableText;
                         interactableUI.interactableText.text = interactableText;
                         interactableUIGameObject.SetActive(true);
 

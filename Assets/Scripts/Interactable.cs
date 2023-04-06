@@ -8,6 +8,7 @@ namespace GR
     {
         public float radius = 0.6f;
         public string interactbleText;
+        internal string interactableText;
 
         private void OnDrawGizmosSelected()
         {

@@ -107,6 +107,14 @@
             "id": "09317420-db9c-4d32-aa66-9033540787a1",
             "actions": [
                 {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "f0355145-69b9-4354-9b69-d3df68e01676",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Roll",
                     "type": "Button",
                     "id": "b88f3909-7850-43e2-ad06-d3db80b1791e",
@@ -131,7 +139,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "A.",
+                    "name": "A",
                     "type": "Button",
                     "id": "946de916-1d42-4d21-ac89-86ec45df19cc",
                     "expectedControlType": "Button",
@@ -199,7 +207,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "A.",
+                    "action": "A",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -211,6 +219,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e9db53d-0d01-4fc0-9580-6652a9683945",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
