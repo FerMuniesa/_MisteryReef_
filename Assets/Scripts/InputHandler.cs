@@ -18,6 +18,7 @@ namespace GR
         public bool rt_Input;
         public bool jump_Input;
         public bool inventory_Input;
+        public bool lockOnInput;
 
         public bool d_Pad_Up;
         public bool d_Pad_Down;
@@ -27,6 +28,7 @@ namespace GR
         public bool rollFlag;
         public bool sprintFlag;
         public bool comboFlag;
+        public bool lockOnFlag;
         public bool inventoryFlag;
         public float rollInputTimer;
 
@@ -34,6 +36,7 @@ namespace GR
         PlayerAttacker playerAttacker;
         PlayerInventory playerInventory;
         PlayerManager playerManager;
+        CameraHandler cameraHandler;
         UIManager uiManager;
 
         Vector2 movementInput;
@@ -45,6 +48,7 @@ namespace GR
             playerInventory = GetComponent<PlayerInventory>();
             playerManager = GetComponent<PlayerManager>();
             uiManager = FindObjectOfType<UIManager>();
+            cameraHandler = FindObjectOfType<CameraHandler>();
         }
 
         public void OnEnable()
@@ -54,6 +58,14 @@ namespace GR
                 inputActions = new PlayerControls();
                 inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
                 inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+                inputActions.PlayerActions.RB.performed += i => rb_Input = true;
+                inputActions.PlayerActions.RT.performed += i => rt_Input = true;
+                inputActions.PlayerQuickSlots.DPadRight.performed += i => d_Pad_Right = true;
+                inputActions.PlayerQuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
+                inputActions.PlayerActions.A.performed += i => a_Input = true;
+                inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
+                inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
+                inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
             }
 
             inputActions.Enable();
@@ -70,9 +82,8 @@ namespace GR
             HandleRollInput(delta);
             HandleAttackInput(delta);
             HandleQuickSlotsInput();
-            HandleInteractingButtonInput();
-            HandleJumpInput();
             HandleInventoryInput();
+            HandleLockOnInput();
         }
 
         private void MoveInput(float delta)
@@ -87,11 +98,11 @@ namespace GR
         private void HandleRollInput(float delta)
         {
             b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
+            sprintFlag = b_Input;
 
             if (b_Input)
             {
                 rollInputTimer += delta;
-                sprintFlag = true;
             }
             else
             {
@@ -107,8 +118,6 @@ namespace GR
 
         private void HandleAttackInput(float delta)
         {
-            inputActions.PlayerActions.RB.performed += i => rb_Input = true;
-            inputActions.PlayerActions.RT.performed += i => rt_Input = true;
 
             if (rb_Input)
             {
@@ -138,9 +147,6 @@ namespace GR
 
         private void HandleQuickSlotsInput()
         {
-            inputActions.PlayerQuickSlots.DPadRight.performed += i => d_Pad_Right = true;
-            inputActions.PlayerQuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
-
             if (d_Pad_Right)
             {
                 playerInventory.ChangeRightWeapon();
@@ -151,20 +157,8 @@ namespace GR
             }
         }
 
-        private void HandleInteractingButtonInput()
-        {
-            inputActions.PlayerActions.A.performed += i => a_Input = true;
-        }
-
-        private void HandleJumpInput()
-        {
-            inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
-        }
-
         private void HandleInventoryInput()
         {
-            inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
-
             if (inventory_Input)
             {
                 inventoryFlag = !inventoryFlag;
@@ -181,6 +175,27 @@ namespace GR
                     uiManager.CloseAllInventoryWindows();
                     uiManager.hudWindow.SetActive(true);
                 }
+            }
+        }
+
+        private void HandleLockOnInput()
+        {
+            if (lockOnInput && lockOnFlag == false)
+            {
+                cameraHandler.ClearLockOnTargets();
+                lockOnInput = false;
+                cameraHandler.HandleLockOn();
+                if (cameraHandler.nearestLockOnTarget != null)
+                {
+                    cameraHandler.currentLockOnTarget = cameraHandler.nearestLockOnTarget;
+                    lockOnFlag = true;
+                }
+            }
+            else if (lockOnInput && lockOnFlag)
+            {
+                lockOnInput = false;
+                lockOnFlag = false;
+                cameraHandler.ClearLockOnTargets();
             }
         }
     }
