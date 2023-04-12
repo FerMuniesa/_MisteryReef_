@@ -74,6 +74,7 @@ namespace GR
 
             float delta = Time.deltaTime;
 
+            // Siempre sigo la player con un rotación
             if (cameraHandler != null)
             {
                 cameraHandler.FollowTarget(delta);

@@ -116,7 +116,7 @@ namespace GR
 
         private void OnAnimatorMove()
         {
-            if (playerManager.isInteracting == false)
+            if (playerManager == null || playerManager.isInteracting == false || playerLocomotion == null || playerLocomotion.rigidbody == null)
                 return;
 
             float delta = Time.deltaTime;

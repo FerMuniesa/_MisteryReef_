@@ -10,7 +10,8 @@ namespace GR
     {
         public int healthLevel = 10;
         public int maxHealth;
-        public int currentHealth;
+        // TODO
+        public int currentHealth = 0;
         public GameObject Slider;
 
         public Slider slider;
@@ -24,7 +25,10 @@ namespace GR
 
         private void Update()
         {
-            slider.value = currentHealth;
+            if (slider != null)
+            {
+                slider.value = currentHealth;
+            }
         }
 
         void Start()

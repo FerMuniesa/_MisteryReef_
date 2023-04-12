@@ -17,7 +17,8 @@ public class PatrullaEsqueleto : StateMachineBehaviour
     }
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        if (player == null) return;
+
         puppet.speed = 2f;
         puppet.destination = contenedorEsqueleto.destination[contenedorEsqueleto.nextPosition].position;
         if (Vector3.Distance(puppet.transform.position, contenedorEsqueleto.destination[contenedorEsqueleto.nextPosition].position) <= 2f)

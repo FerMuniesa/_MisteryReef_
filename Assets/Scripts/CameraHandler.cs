@@ -31,9 +31,11 @@ namespace GR
         public float cameraCollisionOffSet = 0.2f;
         public float minimumCollisionOffset = 0.2f;
 
+        //  Es el lock on por defecto
         public Transform currentLockOnTarget;
 
         List<CharacterManager> availableTargets = new List<CharacterManager>();
+        //  Es el tr más cercano por defecto
         public Transform nearestLockOnTarget;
         public Transform leftLockTarget;
         public Transform rightLockTarget;
@@ -49,6 +51,10 @@ namespace GR
             inputHandler = FindObjectOfType<InputHandler>();
         }
 
+        /// <summary>
+        /// Método para seguir al player
+        /// </summary>
+        /// <param name="delta"></param>
         public void FollowTarget(float delta)
         {
             Vector3 targetPosition = Vector3.SmoothDamp(myTransform.position, targetTransform.position, ref cameraFollowVelocity, delta / followSpeed);
@@ -57,10 +63,19 @@ namespace GR
             HandleCameraCollisions(delta);
         }
 
+        /// <summary>
+        /// Modifica la rotación de la camara en función del target 
+        /// </summary>
+        /// <param name="delta"></param>
+        /// <param name="mouseXInput"></param>
+        /// <param name="mouseYInput"></param>
         public void HandleCameraRotation(float delta, float mouseXInput, float mouseYInput)
         {
+            //  Si el player no tiene un lock on -> utilizamos la rotación del player
             if (inputHandler.lockOnFlag == false && currentLockOnTarget == null)
             {
+                print("Sin LOCK");
+
                 lookAngle += mouseXInput * lookSpeed * delta;
                 pivotAngle -= mouseYInput * pivotSpeed * delta;
                 pivotAngle = Mathf.Clamp(pivotAngle, minimumPivot, maximumPivot);
@@ -78,12 +93,15 @@ namespace GR
             }
             else
             {
+                print("Con LOCK");
                 float velocity = 0;
 
+                // saca la dirección a la que mirar
                 Vector3 dir = currentLockOnTarget.position - transform.position;
                 dir.Normalize();
                 dir.y = 0;
 
+                //  Aplicamos rotación 
                 Quaternion targetRotation = Quaternion.LookRotation(dir);
                 transform.rotation = targetRotation;
 
@@ -121,6 +139,9 @@ namespace GR
             cameraTransform.localPosition = cameraTransformPosition;
         }
 
+        /// <summary>
+        /// Busca un enemigo para aplicar el lock on
+        /// </summary>
         public void HandleLockOn()
         {
             float shortestDistance = Mathf.Infinity;
