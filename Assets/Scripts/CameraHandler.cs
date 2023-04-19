@@ -74,8 +74,6 @@ namespace GR
             //  Si el player no tiene un lock on -> utilizamos la rotación del player
             if (inputHandler.lockOnFlag == false && currentLockOnTarget == null)
             {
-                print("Sin LOCK");
-
                 lookAngle += mouseXInput * lookSpeed * delta;
                 pivotAngle -= mouseYInput * pivotSpeed * delta;
                 pivotAngle = Mathf.Clamp(pivotAngle, minimumPivot, maximumPivot);
@@ -93,7 +91,6 @@ namespace GR
             }
             else
             {
-                print("Con LOCK");
                 float velocity = 0;
 
                 // saca la dirección a la que mirar

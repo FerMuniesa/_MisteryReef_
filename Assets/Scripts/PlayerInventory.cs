@@ -1,9 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
+
 
 namespace GR
 {
+    /// <summary>
+    /// Clase que se encarga de gestionar las actions del inventario
+    /// </summary>
+    public static class InventoryActions
+    {
+        /// <summary>
+        /// Equipa una arma
+        /// </summary>
+        public static Action<WeaponItem> EquipRightHandWeaponItem;
+    }
+
+
+    /// <summary>
+    /// Clase que se encarga de visualizar las armas en las manos
+    /// </summary>
     public class PlayerInventory : MonoBehaviour
     {
         WeaponSlotManager weaponSlotManager;
@@ -13,12 +31,14 @@ namespace GR
 
         public WeaponItem unarmedWeapon;
 
+        //  Arma actual equipada
         public WeaponItem[] weaponsInRightHandSlots = new WeaponItem[1];
         public WeaponItem[] weaponsInLeftHandSlots = new WeaponItem[1];
 
         public int currentRightWeaponIndex = -1;
         public int currentLeftWeaponIndex = -1;
 
+        //  Lista de armas del inventario
         public List<WeaponItem> weaponsInventory;
 
         private void Awake()
@@ -26,10 +46,29 @@ namespace GR
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
         }
 
+        private void OnEnable()
+        {
+            InventoryActions.EquipRightHandWeaponItem += EquipRightHand;
+        }
+
+        private void OnDisable()
+        {
+            InventoryActions.EquipRightHandWeaponItem -= EquipRightHand;
+        }
+
         private void Start()
         {
             rightWeapon = unarmedWeapon;
             leftWeapon = unarmedWeapon;
+        }
+
+        // Equipar la mano
+        // equipar el slot en el manager
+        // Añadir el arma que esta en la mano al inventario
+        public void EquipRightHand(WeaponItem weaponItem)
+        {
+            rightWeapon = weaponItem;
+            weaponSlotManager.LoadWeaponOnSlot(weaponItem, false);
         }
 
         public void ChangeRightWeapon()

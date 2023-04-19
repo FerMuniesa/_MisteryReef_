@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 
@@ -61,6 +62,8 @@ namespace GR
         void Desactivar()
         {
             Slider.SetActive(false);
+            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponent<NavMeshAgent>().enabled = false;
         }
     }
 }

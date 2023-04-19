@@ -9,10 +9,12 @@ namespace GR
         AnimatorHandler animatorHandler;
         InputHandler inputHandler;
         WeaponSlotManager weaponSlotManager;
+        PlayerStats playerStats;
         public string lastAttack;
 
         private void Awake()
         {
+            playerStats = GetComponent<PlayerStats>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             inputHandler = GetComponent<InputHandler>();
@@ -20,7 +22,7 @@ namespace GR
 
         public void HandleWeaponCombo(WeaponItem weapon)
         {
-            if (inputHandler.comboFlag)
+            if (inputHandler.comboFlag && playerStats.GetStamina() >= weapon.baseStamina)
             {
                 animatorHandler.anim.SetBool("canDoCombo", false);
 
@@ -33,16 +35,22 @@ namespace GR
 
         public void HandleLightAttack(WeaponItem weapon)
         {
-            weaponSlotManager.attackingWeapon = weapon;
-            animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);
-            lastAttack = weapon.oh_light_attack_01;
+            if (playerStats.GetStamina() >= weapon.baseStamina)
+            {
+                weaponSlotManager.attackingWeapon = weapon;
+                animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);
+                lastAttack = weapon.oh_light_attack_01;
+            }
         }
 
         public void HandleHeavyAttack(WeaponItem weapon)
         {
-            weaponSlotManager.attackingWeapon = weapon;
-            animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);
-            lastAttack = weapon.oh_light_attack_01;
+            if (playerStats.GetStamina() >= weapon.baseStamina)
+            {
+                weaponSlotManager.attackingWeapon = weapon;
+                animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);
+                lastAttack = weapon.oh_light_attack_01;
+            }
         }
     }
 }

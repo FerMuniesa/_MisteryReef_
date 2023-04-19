@@ -99,9 +99,12 @@ namespace GR
 
                     if (interactableObject != null)
                     {
-                        string interactableText = interactableObject.interactableText;
-                        interactableUI.interactableText.text = interactableText;
-                        interactableUIGameObject.SetActive(true);
+                        string interactableText = interactableObject.interactbleText;
+
+                        UIActions.ShowMsg(interactableText);
+
+                        //interactableUI.interactableText.text = interactableText;
+                        //interactableUIGameObject.SetActive(true);
 
                         if (inputHandler.a_Input)
                         {
@@ -112,6 +115,8 @@ namespace GR
             }
             else
             {
+                UIActions.EraseMsg();
+
                 if (interactableUIGameObject != null)
                 {
                     interactableUIGameObject.SetActive(false);
@@ -123,7 +128,5 @@ namespace GR
                 }
             }
         }
-
-
     }
 }

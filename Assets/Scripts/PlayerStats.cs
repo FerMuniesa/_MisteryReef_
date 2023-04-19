@@ -14,6 +14,12 @@ namespace GR
         public int maxStamina;
         public int currentStamina;
 
+        [SerializeField]
+        private float timeToRecover;
+
+        [SerializeField]
+        private int amountToRecover;
+
         HealthBar healthBar;
         StaminaBar staminaBar;
         AnimatorHandler animatorHandler;
@@ -68,6 +74,26 @@ namespace GR
         public void TakeStaminaDamage(int damage)
         {
             currentStamina = currentStamina - damage;
+            staminaBar.SetCurrentStamina(currentStamina);
+            Invoke(nameof(RecoverStamina), timeToRecover);
+        }
+
+        public int GetStamina()
+        {
+            return currentStamina;
+        }
+
+        public void RecoverStamina()
+        {
+            currentStamina += amountToRecover;
+            if (currentStamina > maxStamina)
+            {
+                currentStamina = maxStamina;
+            }
+            else if (currentStamina < maxStamina)
+            {
+                Invoke(nameof(RecoverStamina), timeToRecover);
+            }
             staminaBar.SetCurrentStamina(currentStamina);
         }
     }

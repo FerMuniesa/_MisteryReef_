@@ -17,14 +17,15 @@ namespace GR
 
         Animator animator;
 
-        QuickSlotsUI quickSlotsUI;
+        [SerializeField]
+        public QuickSlotsUI quickSlotsUI;
 
         PlayerStats playerStats;
 
         private void Awake()
         {
             animator = GetComponent<Animator>();
-            quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
+            //quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
             playerStats = GetComponentInParent<PlayerStats>();
 
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();

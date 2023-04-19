@@ -99,6 +99,7 @@ namespace GR
             mouseY = cameraInput.y;
         }
 
+        // Aplicar roll desde input
         private void HandleRollInput(float delta)
         {
             b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
@@ -149,6 +150,7 @@ namespace GR
             }
         }
 
+        //  Intercambia armas de una mano a otra
         private void HandleQuickSlotsInput()
         {
             if (d_Pad_Right)
@@ -161,6 +163,7 @@ namespace GR
             }
         }
 
+        //  Abrir inventario
         private void HandleInventoryInput()
         {
             if (inventory_Input)
@@ -171,13 +174,13 @@ namespace GR
                 {
                     uiManager.OpenSelectWindow();
                     uiManager.UpdateUI();
-                    uiManager.hudWindow.SetActive(false);
+                    //uiManager.hudWindow.SetActive(false);
                 }
                 else
                 {
                     uiManager.CloseSelectWindow();
                     uiManager.CloseAllInventoryWindows();
-                    uiManager.hudWindow.SetActive(true);
+                    //uiManager.hudWindow.SetActive(true);
                 }
             }
         }
