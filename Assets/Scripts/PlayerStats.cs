@@ -61,7 +61,8 @@ namespace GR
             currentHealth = currentHealth - damage;
             healthBar.SetCurrentHealth(currentHealth);
 
-            animatorHandler.PlayTargetAnimation("Damage_01", true);
+            //animatorHandler.PlayTargetAnimation("Damage_01", true);
+            animatorHandler.DamageAnim();
 
             if (currentHealth <= 0)
             {

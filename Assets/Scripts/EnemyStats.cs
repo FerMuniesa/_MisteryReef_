@@ -1,9 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
+
+public static class EnemyActions
+{
+    public static Action<GameObject> OnDeath;
+}
 
 namespace GR
 {
@@ -15,9 +21,20 @@ namespace GR
         public int currentHealth = 0;
         public GameObject Slider;
 
+        //  Rango de ataque de los enemigos
+        public float attackRange;
+
+        public int dmgAttack;
+
+        public float cd;
+
+        public float rangeVision;
+
         public Slider slider;
 
         Animator animator;
+
+
 
         private void Awake()
         {
@@ -55,6 +72,7 @@ namespace GR
                 currentHealth = 0;
                 animator.Play("Death");
                 Invoke("Desactivar", 2);
+                EnemyActions.OnDeath(gameObject);
                 //HANDLE PLAYER DEATH
             }
         }

@@ -94,6 +94,12 @@ namespace GR
             anim.CrossFade(targetAnim, 0.2f);
         }
 
+        public void DamageAnim()
+        {
+            anim.SetTrigger("Damage");
+        }
+
+
         public void CanRotate()
         {
             canRotate = true;
