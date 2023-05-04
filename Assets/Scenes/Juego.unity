@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -984,7 +984,7 @@ Transform:
   - {fileID: 912976690}
   - {fileID: 973597481}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &142497819 stripped
 Transform:
@@ -3246,19 +3246,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854439499483276721, guid: 96f7cd74dc8a937449d9bb0997f814aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 80.87
+      value: 159.29
       objectReference: {fileID: 0}
     - target: {fileID: 7854439499483276721, guid: 96f7cd74dc8a937449d9bb0997f814aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.26
+      value: 3.63
       objectReference: {fileID: 0}
     - target: {fileID: 7854439499483276721, guid: 96f7cd74dc8a937449d9bb0997f814aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.95
+      value: -6.25
       objectReference: {fileID: 0}
     - target: {fileID: 7854439499483276721, guid: 96f7cd74dc8a937449d9bb0997f814aa, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.10314992
+      value: -0.92136705
       objectReference: {fileID: 0}
     - target: {fileID: 7854439499483276721, guid: 96f7cd74dc8a937449d9bb0997f814aa, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3266,7 +3266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854439499483276721, guid: 96f7cd74dc8a937449d9bb0997f814aa, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99466586
+      value: 0.3886936
       objectReference: {fileID: 0}
     - target: {fileID: 7854439499483276721, guid: 96f7cd74dc8a937449d9bb0997f814aa, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3278,7 +3278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854439499483276721, guid: 96f7cd74dc8a937449d9bb0997f814aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 191.841
+      value: 314.253
       objectReference: {fileID: 0}
     - target: {fileID: 7854439499483276721, guid: 96f7cd74dc8a937449d9bb0997f814aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5949,7 +5949,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &650127574 stripped
 Transform:
@@ -6279,7 +6279,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &706078049
 GameObject:
@@ -8715,7 +8715,7 @@ Transform:
   - {fileID: 355592133}
   - {fileID: 596808406}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1038663048 stripped
 Transform:
@@ -10485,6 +10485,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 438250, guid: ab08969352dd15648919e529870214e2, type: 3}
   m_PrefabInstance: {fileID: 3332078313286761534}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1242837110
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 192002, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_Name
+      value: Character_Pirate_Blackbeard_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 148.3665
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.6502213
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.3190794
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7669891
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.64166015
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 79.831
+      objectReference: {fileID: 0}
+    - target: {fileID: 441856, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc4987e2fb189ec4d96488b047577016, type: 3}
 --- !u!4 &1245887563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 417874, guid: fba205c40ba110a46a927545d22de348, type: 3}
@@ -19198,7 +19255,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1748886798 stripped
 Transform:
