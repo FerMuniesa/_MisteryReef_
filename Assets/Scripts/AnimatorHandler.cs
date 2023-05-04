@@ -25,12 +25,15 @@ namespace GR
             horizontal = Animator.StringToHash("Horizontal");
         }
 
-        public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement, bool isSprinting)
+        public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement, bool isSprinting, float verticalDir)
         {
             #region Vertical
             float v = 0;
-
-            if (verticalMovement > 0 && verticalMovement < 0.55f)
+            if (verticalDir < 0.0f && inputHandler.lockOnFlag)
+            {
+                v = -1.0f;
+            }
+            else if (verticalMovement > 0 && verticalMovement < 0.55f)
             {
                 v = 0.5f;
             }
@@ -48,14 +51,21 @@ namespace GR
             }
             else
             {
-                v = 0;
+                v = 0.0f;
             }
             #endregion
 
             #region Horizontal
             float h = 0;
-
-            if (horizontalMovement > 0 && horizontalMovement < 0.55f)
+            if (inputHandler.horizontal < 0.0f && inputHandler.lockOnFlag)
+            {
+                h = -1.0f;
+            }
+            else if (inputHandler.horizontal > 0.0f && inputHandler.lockOnFlag)
+            {
+                h = 1.0f;
+            }
+            else if (horizontalMovement > 0 && horizontalMovement < 0.55f)
             {
                 h = 0.5f;
             }

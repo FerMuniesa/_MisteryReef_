@@ -223,6 +223,34 @@ namespace GR
                     cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
                 }
             }
+
+           
+            if (cameraHandler.currentLockOnTarget != null)
+            {
+                float distance = Vector3.Distance(cameraHandler.currentLockOnTarget.transform.position, transform.position);
+
+                transform.LookAt(cameraHandler.currentLockOnTarget.transform);
+                Quaternion currentRotation = transform.rotation;
+                transform.rotation = Quaternion.Euler(0, currentRotation.eulerAngles.y, 0);
+
+                //if (distance > 3)
+                //{
+                //    transform.LookAt(cameraHandler.currentLockOnTarget.transform);
+
+                //    // Rotar el personaje sobre su eje Y para que mire hacia el objeto en el plano XZ
+                //    Quaternion currentRotation = transform.rotation;
+                //    transform.rotation = Quaternion.Euler(0, currentRotation.eulerAngles.y, 0);
+
+                //    ////float angle = Vector3.Angle(transform.forward, );
+                //    ////transform.LookAt(cameraHandler.currentLockOnTarget,Vector3.up);
+                //    //Vector3 rot = Vector3.Normalize(cameraHandler.currentLockOnTarget.transform.position - transform.position);
+                //    //print(rot);
+                //    ////rot.x = 0f;
+                //    ////rot.z = 0f;
+                //    //transform.forward = rot;
+                //    ////transform.rotation = Quaternion.Euler( * rot);
+                //}
+            }
         }
     }
 }
