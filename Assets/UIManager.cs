@@ -27,6 +27,15 @@ namespace GR
         [Tooltip("Panel con el inventario del player")]
         public GameObject weaponInventoryWindow;
 
+        [SerializeField]
+        public GameObject textPanelNPC;
+
+        [SerializeField]
+        public TextMeshProUGUI textName;
+
+        [SerializeField]
+        public TextMeshProUGUI textText;
+
         [Header("Weapon Inventory")]
         public GameObject weaponInventorySlotPrefab;
         public Transform weaponInventorySlotsParent;
@@ -106,6 +115,19 @@ namespace GR
         /// </summary>
         private void RemoveWeaponInventory()
         {
+
+        }
+
+        public void ShowInteractuableMessage(string _name, string _text)
+        {
+            textPanelNPC.SetActive(true);
+            textName.text = _name;
+            textText.text = _text;
+        }
+
+        public void CloseInteractuableMessage()
+        {
+            textPanelNPC.SetActive(false);
 
         }
 
