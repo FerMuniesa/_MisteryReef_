@@ -67,15 +67,15 @@ public class EnemyMovement : MonoBehaviour
             animatorHandler.gameObject.GetComponent<Animator>().SetFloat("Vertical", 0.0f);
             mOVEMENT_STATE = MOVEMENT_STATE.WAITING;
         }
-        //if (moving)
-        //{
-        //    float distance = Vector3.Distance(transform.position, destinationPos.position);
-        //    if (distance > StopDistance)
-        //    {
-        //        agent.SetDestination(destinationPos.position);
-        //        agent.stoppingDistance = StopDistance;
-        //    }
-        //}
+        if (moving)
+        {
+            float distance = Vector3.Distance(transform.position, destinationPos.position);
+            if (distance > StopDistance)
+            {
+                agent.SetDestination(destinationPos.position);
+                agent.stoppingDistance = StopDistance;
+            }
+        }
 
         //animatorHandler.UpdateAnimatorValues(agent.velocity.magnitude > 0 ? 1 : 0, 0, true);
     }
