@@ -25,7 +25,7 @@ namespace GR
         private void Awake()
         {
             animator = GetComponent<Animator>();
-            //quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
+            quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
             playerStats = GetComponentInParent<PlayerStats>();
 
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
@@ -42,10 +42,17 @@ namespace GR
             }
         }
 
+        public bool IsArmered()
+        {
+            return leftHandSlot.active ||
+                rightHandSlot.active;
+        }
+
         public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
         {
             if (isLeft)
             {
+                leftHandSlot.active = true;
                 leftHandSlot.LoadWeaponModel(weaponItem);
                 LoadLeftWeaponDamageCollider();
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
@@ -62,6 +69,7 @@ namespace GR
             }
             else
             {
+                rightHandSlot.active = true;
                 rightHandSlot.LoadWeaponModel(weaponItem);
                 LoadRightWeaponDamageCollider();
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);

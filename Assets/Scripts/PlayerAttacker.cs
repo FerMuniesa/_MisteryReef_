@@ -35,7 +35,7 @@ namespace GR
 
         public void HandleLightAttack(WeaponItem weapon)
         {
-            if (playerStats.GetStamina() >= weapon.baseStamina)
+            if (weaponSlotManager.IsArmered() && playerStats.GetStamina() >= weapon.baseStamina) 
             {
                 weaponSlotManager.attackingWeapon = weapon;
                 animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);
@@ -45,7 +45,7 @@ namespace GR
 
         public void HandleHeavyAttack(WeaponItem weapon)
         {
-            if (playerStats.GetStamina() >= weapon.baseStamina)
+            if (weaponSlotManager.IsArmered() && playerStats.GetStamina() >= weapon.baseStamina)
             {
                 weaponSlotManager.attackingWeapon = weapon;
                 animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);

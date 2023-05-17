@@ -12,6 +12,8 @@ namespace GR
 
         public GameObject currentWeaponModel;
 
+        public bool active = false;
+
         public void UnloadWeapon()
         {
             if (currentWeaponModel != null)

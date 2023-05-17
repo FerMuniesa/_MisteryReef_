@@ -232,6 +232,7 @@ MonoBehaviour:
   enemyAttack: {fileID: 3934269693852815954}
   visionRange: {fileID: 1977918509125699698}
   myStats: {fileID: 714365275}
+  pauseTime: {x: 0, y: 0}
   myAnim: {fileID: 2439589175679121330}
 --- !u!114 &714365274
 MonoBehaviour:
@@ -263,7 +264,7 @@ MonoBehaviour:
   currentHealth: 10
   Slider: {fileID: 7256681666125242868}
   attackRange: 1.5
-  dmgAttack: 1
+  dmgAttack: 10
   cd: 3
   rangeVision: 10
   slider: {fileID: 7256681666125242634}
@@ -283,6 +284,7 @@ MonoBehaviour:
   StopDistance: 1
   animatorHandler: {fileID: 2439589175686347423}
   rangoDistance: 0.1
+  speedLimit: 0
 --- !u!114 &3934269693852815954
 MonoBehaviour:
   m_ObjectHideFlags: 0
