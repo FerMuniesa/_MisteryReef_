@@ -199,6 +199,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "PasarDialogo",
+                    "type": "Button",
+                    "id": "05aac5b5-477d-4679-8cb3-f25f4ab89ddd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -287,6 +295,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Lock On ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c3c9e28-4029-4c93-b4e6-cad9759a170b",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PasarDialogo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

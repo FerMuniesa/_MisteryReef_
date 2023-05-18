@@ -71,6 +71,7 @@ namespace GR
             if (other.CompareTag("Player"))
             {
                 uIManager.ShowInteractuableMessage(nameInteractuable, textos[index]);
+                Debug.Log("Detecta");
             }
         }
 

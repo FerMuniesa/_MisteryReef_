@@ -66,7 +66,7 @@ namespace GR
                 inputActions.PlayerQuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
                 inputActions.PlayerActions.A.performed += i => a_Input = true;
                 inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
-                inputActions.PlayerActions.Jump.performed += i => InteractuableActions.Interactuate?.Invoke();
+                inputActions.PlayerActions.PasarDialogo.performed += i => InteractuableActions.Interactuate?.Invoke();
                 inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
                 inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
                 inputActions.PlayerMovement.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;

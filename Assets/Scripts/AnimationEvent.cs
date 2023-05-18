@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AnimationEvent : MonoBehaviour
 {
+
+    public GameObject canvas;
     public void OnDeathAnimFinish()
     {
-        GameManager.instance.LoadScene(3);
+        canvas.SetActive(true);
     }
 }

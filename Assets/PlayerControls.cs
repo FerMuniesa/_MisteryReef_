@@ -212,6 +212,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PasarDialogo"",
+                    ""type"": ""Button"",
+                    ""id"": ""05aac5b5-477d-4679-8cb3-f25f4ab89ddd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -300,6 +308,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Lock On "",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c3c9e28-4029-4c93-b4e6-cad9759a170b"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PasarDialogo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -451,6 +470,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_A = m_PlayerActions.FindAction("A", throwIfNotFound: true);
         m_PlayerActions_LockOn = m_PlayerActions.FindAction("Lock On ", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerActions_PasarDialogo = m_PlayerActions.FindAction("PasarDialogo", throwIfNotFound: true);
         // PlayerQuickSlots
         m_PlayerQuickSlots = asset.FindActionMap("PlayerQuickSlots", throwIfNotFound: true);
         m_PlayerQuickSlots_DPadUp = m_PlayerQuickSlots.FindAction("D-Pad Up", throwIfNotFound: true);
@@ -570,6 +590,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_A;
     private readonly InputAction m_PlayerActions_LockOn;
     private readonly InputAction m_PlayerActions_Jump;
+    private readonly InputAction m_PlayerActions_PasarDialogo;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -581,6 +602,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @A => m_Wrapper.m_PlayerActions_A;
         public InputAction @LockOn => m_Wrapper.m_PlayerActions_LockOn;
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
+        public InputAction @PasarDialogo => m_Wrapper.m_PlayerActions_PasarDialogo;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -611,6 +633,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
+                @PasarDialogo.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPasarDialogo;
+                @PasarDialogo.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPasarDialogo;
+                @PasarDialogo.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPasarDialogo;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -636,6 +661,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @PasarDialogo.started += instance.OnPasarDialogo;
+                @PasarDialogo.performed += instance.OnPasarDialogo;
+                @PasarDialogo.canceled += instance.OnPasarDialogo;
             }
         }
     }
@@ -713,6 +741,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnA(InputAction.CallbackContext context);
         void OnLockOn(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnPasarDialogo(InputAction.CallbackContext context);
     }
     public interface IPlayerQuickSlotsActions
     {
