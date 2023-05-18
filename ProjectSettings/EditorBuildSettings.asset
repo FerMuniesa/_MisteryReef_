@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pantalla final Ganar.unity
     guid: 72170c0be1778624f8354199bf132eb4
+  - enabled: 0
+    path: Assets/Scenes/Pantalla final 1.unity
+    guid: 37b5be5651ad2b647be8282e63ef6029
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f0722f10f32e36f4a9a4bddcef95be84, type: 2}

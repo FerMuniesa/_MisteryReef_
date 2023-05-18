@@ -448,6 +448,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7861620431982970138, guid: 89cc341bfde0de64283c8119fa4159c6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 728e00e5e1aee1b48b33a6a0ef16c69a, type: 2}
+    - target: {fileID: 7861620431982970138, guid: 89cc341bfde0de64283c8119fa4159c6, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1630473137766591041, guid: 728e00e5e1aee1b48b33a6a0ef16c69a, type: 2}
     - target: {fileID: 7861620432233087336, guid: 89cc341bfde0de64283c8119fa4159c6, type: 3}
       propertyPath: m_Name
       value: Canvas
